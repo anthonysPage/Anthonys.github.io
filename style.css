@@ -1,0 +1,789 @@
+/* Global styles for margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles: font, background, color, and overflow */
+/* Prioritize Apple system fonts for an Apple-like style, including SF Pro Display */
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: #000;
+    color: #fff;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Navigation Bar styles */
+.navbar {
+    position: fixed; /* Fixed position at the top */
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+    backdrop-filter: blur(20px); /* Blur effect for glassmorphism */
+    z-index: 1000; /* Ensure it's above other content */
+    padding: 12px 0;
+    transition: all 0.3s ease; /* Smooth transition for background changes */
+}
+
+/* Navigation Content: max-width, centering, flex layout */
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Navigation Links container */
+.nav-links {
+    display: flex;
+    list-style: none; /* Remove bullet points */
+    gap: 30px; /* Space between links */
+}
+
+/* Individual Navigation Link styling */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Navigation Link hover effect */
+.nav-links a:hover {
+    color: #0071e3; /* Blue color on hover */
+}
+
+/* Hero Section styles */
+.hero {
+    height: 70vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 70%, #000 100%); /* Gradient background */
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+/* Pseudo-element for radial light effect in Hero section */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at center, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        rgba(255, 255, 255, 0.12) 5%, 
+        rgba(255, 255, 255, 0.1) 10%, 
+        rgba(255, 255, 255, 0.08) 15%, 
+        rgba(255, 255, 255, 0.06) 20%, 
+        rgba(255, 255, 255, 0.05) 25%, 
+        rgba(255, 255, 255, 0.04) 30%, 
+        rgba(255, 255, 255, 0.03) 35%, 
+        rgba(255, 255, 255, 0.025) 40%, 
+        rgba(255, 255, 255, 0.02) 45%, 
+        rgba(255, 255, 255, 0.015) 50%, 
+        rgba(255, 255, 255, 0.01) 55%, 
+        rgba(255, 255, 255, 0.008) 60%, 
+        rgba(255, 255, 255, 0.006) 65%, 
+        rgba(255, 255, 255, 0.004) 70%, 
+        rgba(255, 255, 255, 0.003) 75%, 
+        rgba(255, 255, 255, 0.002) 80%, 
+        rgba(255, 255, 255, 0.001) 85%, 
+        rgba(0, 0, 0, 0.01) 90%, 
+        rgba(0, 0, 0, 0.02) 95%, 
+        rgba(0, 0, 0, 0.03) 98%, 
+        rgba(0, 0, 0, 0.05) 100%);
+    border-radius: 50%; /* Circular shape */
+    filter: blur(40px); /* Blur the light effect */
+    z-index: 1; /* Below the content */
+}
+
+/* Hero Content styling */
+.hero-content {
+    text-align: center;
+    z-index: 2; /* Above the light effect */
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* Hero Heading styling */
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem); /* Responsive font size */
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #fff, #f0f0f0); /* Gradient text fill */
+    -webkit-background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.3),
+        0 0 16px rgba(255, 255, 255, 0.2); /* Text shadow for glow */
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3)); /* Drop shadow for stronger glow */
+    animation: gentleGlow 4s ease-in-out infinite alternate; /* Gentle glow animation */
+}
+
+/* Keyframes for gentle glow animation */
+@keyframes gentleGlow {
+    0% {
+        text-shadow: 
+            0 0 8px rgba(255, 255, 255, 0.3),
+            0 0 16px rgba(255, 255, 255, 0.2);
+        filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.4));
+    }
+    100% {
+        text-shadow: 
+            0 0 12px rgba(255, 255, 255, 0.4),
+            0 0 20px rgba(255, 255, 255, 0.25);
+        filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.4));
+    }
+}
+
+/* Hero Paragraph styling */
+.hero p {
+    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Responsive font size */
+    margin-bottom: 40px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+/* Container for content centering */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Title styling */
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive font size */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #fff, #ccc); /* Gradient text fill */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Features Section styles */
+.features {
+    padding: 120px 0;
+    background: #000;
+}
+
+/* Feature Grid layout */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive grid columns */
+    gap: 60px;
+    align-items: center;
+}
+
+/* Feature Text styling */
+.feature-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Feature Text Paragraph styling */
+.feature-text p {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Feature Visual styling */
+.feature-visual {
+    height: 400px;
+    background: linear-gradient(135deg, #0071e3, #00a8ff); /* Blue gradient background */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pseudo-element for rotating circle in Feature Visual */
+.feature-visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* SVG for a simple circle, encoded as data URL */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/></svg>');
+    animation: rotate 20s linear infinite; /* Rotation animation */
+}
+
+/* Keyframes for rotation animation */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Apple Music Playlist Section Styles --- */
+:root {
+    --apple-card-bg: #1a1a1a; /* Darker card background */
+    --apple-text-primary: #ffffff; /* White text */
+    --apple-text-secondary: #cccccc; /* Light grey text */
+    --apple-blue: #007aff; /* Apple blue remains */
+    --apple-border: #333333; /* Darker border for dark theme */
+}
+.apple-music-section {
+    padding: 60px 0; /* Reduced padding for shorter section */
+    /* Gradient background based on moon image colors, fading to black at the bottom */
+    background: linear-gradient(to bottom, 
+        #8B4513 0%, /* SaddleBrown - dark brown */
+        #A0522D 25%, /* Sienna - reddish brown */
+        #CD853F 50%, /* Peru - lighter brown/orange */
+        #D2B48C 75%, /* Tan - light brown/beige */
+        rgba(0, 0, 0, 0.5) 95%, /* Semi-transparent black for shadow effect */
+        #000000 100% /* Fully black at the very bottom */
+    );
+    color: var(--apple-text-primary);
+}
+.apple-music-section .section-title {
+    color: var(--apple-text-primary);
+    -webkit-text-fill-color: var(--apple-text-primary);
+    background: none;
+    margin-bottom: 30px; /* Halved margin-bottom */
+}
+.apple-music-card {
+    background-color: rgba(0, 0, 0, 0.2); /* Light transparency */
+    backdrop-filter: blur(15px); /* Simple blur */
+    -webkit-backdrop-filter: blur(15px); /* Webkit compatibility */
+    border-radius: 1.5rem; /* 24px */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Keep existing shadow */
+    
+    /* Helix Animation Styles */
+    transform-style: preserve-3d; /* Needed for 3D transformations */
+    transform: rotateX(90deg) scale(0.8); /* Initial state: tilted and slightly smaller */
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* State when in view */
+.apple-music-card.is-visible {
+    transform: rotateX(0deg) scale(1); /* Final state: flat and normal size */
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .apple-music-card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.apple-music-card-left {
+    padding: 2rem 3rem; /* 32px 48px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.apple-music-card-right {
+    background-color: rgba(0, 0, 0, 0.2); /* Light transparency for right side */
+    backdrop-filter: blur(15px); /* Simple blur for right side */
+    -webkit-backdrop-filter: blur(15px); /* Webkit compatibility for right side */
+    border-left: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for right side */
+    padding: 2rem 3rem;
+}
+.apple-music-image {
+    width: 12rem; /* 192px */
+    height: 12rem; /* 192px */
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .apple-music-image {
+        width: 16rem; /* 256px */
+        height: 16rem; /* 256px */
+    }
+}
+.apple-music-image img {
+    border-radius: 0.75rem; /* 12px */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.apple-music-title {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: var(--apple-text-primary);
+    letter-spacing: -0.025em;
+}
+.apple-music-subtitle {
+    font-size: 1.125rem; /* 18px */
+    color: var(--apple-text-secondary);
+}
+.apple-music-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--apple-blue);
+    color: white;
+    font-weight: 600;
+    padding: 0.625rem 1.5rem; /* 10px 24px */
+    border-radius: 9999px; /* full rounded */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out; /* Added transform for animation */
+    outline: none;
+    text-decoration: none; /* Ensure it looks like a button, not a link */
+}
+.apple-music-button:hover {
+    background-color: rgba(0, 122, 255, 0.9);
+}
+/* Animation for button click */
+.apple-music-button.clicked {
+    transform: scale(0.95); /* Slightly shrink on click */
+    transition: transform 0.1s ease-out; /* Quick transition for click feedback */
+}
+.apple-music-section-title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    color: var(--apple-text-primary); /* Default to white */
+}
+/* New class for gradient text within the title */
+.playlist-gradient-text {
+    background: linear-gradient(to right, #8B4513, #CD853F, #D2B48C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support text-fill-color */
+}
+.apple-music-text-secondary {
+    color: var(--apple-text-secondary);
+}
+.apple-music-border-top {
+    border-top: 1px solid var(--apple-border);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.apple-music-list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.apple-music-list-item img {
+    width: 3rem; /* 48px */
+    height: 3rem; /* 48px */
+    border-radius: 9999px; /* full rounded */
+    object-fit: cover;
+}
+.apple-music-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+.apple-music-stat-card {
+    background-color: #2a2a2a; /* Darker background for stats cards */
+    border-radius: 0.5rem; /* 8px */
+    padding: 0.75rem; /* 12px */
+    border: 1px solid var(--apple-border);
+}
+.apple-music-stat-card p:first-child {
+    font-size: 0.875rem; /* 14px */
+    color: var(--apple-text-secondary);
+}
+.apple-music-stat-card p:last-child {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    color: var(--apple-text-primary);
+}
+
+
+/* Messages Section styles */
+.messages-section {
+    padding: 120px 0;
+    background: #1a1a1a;
+}
+
+/* Messages Demo container styling */
+.messages-demo {
+    background: #2a2a2a;
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Message Bubble styling */
+.message-bubble {
+    background: #0084ff; /* Blue background for sent messages */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin: 10px 0;
+    max-width: 70%;
+    animation: slideIn 0.5s ease-out; /* Slide-in animation for new messages */
+}
+
+/* Styling for received messages (aligned right) */
+.message-bubble.received {
+    background: #444; /* Darker background for received messages */
+    margin-left: auto; /* Push to the right */
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CTA Section styles (Call to Action) */
+.cta-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #0071e3, #00a8ff); /* Blue gradient background */
+    text-align: center;
+}
+
+/* CTA Button styling */
+/* Removed custom CTA button styles to let Puppertino take over */
+.cta-button {
+    margin: 20px 10px; /* Keep margin for spacing */
+}
+
+/* Footer Section styles */
+.footer {
+    background: #1a1a1a;
+    padding: 60px 0 40px;
+    color: #999;
+}
+
+/* Footer Content Grid layout */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
+    gap: 40px;
+}
+
+/* Footer Section Heading styling */
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Footer Section List styling */
+.footer-section ul {
+    list-style: none; /* Remove bullet points */
+}
+
+/* Footer Section List Item styling */
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer Section Link styling */
+.footer-section ul li a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Footer Section Link hover effects */
+.footer-section ul li a:hover {
+    color: #0071e3; /* Blue color on hover */
+}
+
+/* Responsive Design Media Queries */
+@media (max-width: 768px) {
+    /* Hide navigation links on smaller screens */
+    .nav-links {
+        display: none;
+    }
+    
+    /* Adjust Hero heading font size */
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    /* Stack feature grid columns */
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    /* Stack interactive demo columns */
+    .interactive-demo {
+        grid-template-columns: 1fr;
+    }
+
+    /* Button padding and font size for mobile, using Puppertino classes */
+    .pt-button {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Smooth Scrolling for HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Spinner animation */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #0071e3; /* Blue top border for spinner effect */
+    border-radius: 50%; /* Circular shape */
+    animation: spin 1s linear infinite; /* Spin animation */
+    margin: 20px auto;
+}
+
+/* Keyframes for spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- VisionOS Gallery Section Styles --- */
+.vision-gallery-section {
+    padding: 80px 0; /* Adjust padding as needed */
+    color: #fff; /* White text for dark background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Removed min-height: 100vh; for shorter section */
+    /* Background changed to a linear gradient from black to dark blue, with blue starting higher */
+    background: linear-gradient(to bottom, #000000 0%, #003366 70%); /* Stronger blue starts at 70% of the section height */
+}
+
+/* Adjust section title for light background (now dark background) */
+.vision-gallery-section .section-title {
+    color: #fff; /* White color for title on dark background */
+    -webkit-text-fill-color: #fff;
+    background: none;
+    margin-bottom: 40px;
+}
+
+/* VisionOS Card Styles */
+.vision-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border-radius: 2.5rem; /* 40px */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    cursor: pointer; /* Make cards clickable */
+}
+.vision-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.4);
+}
+.glass-ui {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.glass-ui-icon {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 9999px;
+    padding: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    /* Add pointer cursor to indicate clickability */
+    cursor: pointer; 
+}
+
+/* New Features Section Styles */
+.new-features-section {
+    padding: 120px 0;
+    background: #000; /* Dark background */
+    color: #fff; /* White text */
+}
+
+.new-features-section .section-title {
+    color: #fff; /* White title for dark background */
+    -webkit-text-fill-color: #fff;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Space between image and text */
+    margin-bottom: 100px; /* Space between feature rows */
+}
+
+.feature-row:last-child {
+    margin-bottom: 0; /* No margin after the last row */
+}
+
+.feature-row.reverse {
+    flex-direction: row-reverse; /* Reverse order for alternating layout */
+}
+
+.feature-content-block {
+    display: flex;
+    flex-direction: row; /* Default: image on left, text on right */
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.feature-row.reverse .feature-content-block {
+    flex-direction: row-reverse; /* Reverse for alternating layout */
+}
+
+.feature-image-wrapper {
+    flex: 1; /* Take up equal space */
+    min-width: 40%; /* Ensure image doesn't shrink too much */
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific rule for images in new-features-section to apply 30pt border-radius */
+.new-features-section .feature-image-wrapper img {
+    border-radius: 30pt; /* Apply 30pt border-radius */
+}
+
+.feature-text-block {
+    flex: 1; /* Take up equal space */
+    padding: 20px; /* Add some padding */
+}
+
+.feature-text-block h3 {
+    font-size: clamp(2rem, 4vw, 3rem); /* Responsive font size */
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.feature-text-block p {
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Responsive adjustments for new features section */
+@media (max-width: 1024px) {
+    .feature-row, .feature-row.reverse {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+    .feature-content-block, .feature-row.reverse .feature-content-block {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .feature-image-wrapper {
+        max-width: 80%; /* Adjust max-width for stacked images */
+        min-width: unset;
+    }
+    .feature-text-block {
+        padding: 0; /* Remove padding when stacked */
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-row {
+        margin-bottom: 60px;
+    }
+}
+
+/* --- Scroll Animations --- */
+.scroll-animated {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-animated.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific animation for elements that scale up slightly */
+.scroll-animated.scale-up {
+    transform: translateY(20px) scale(0.95);
+}
+
+.scroll-animated.scale-up.is-visible {
+    transform: translateY(0) scale(1);
+}
+
+/* New animation classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.slide-in-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.slide-in-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Staggered delays */
+.scroll-animated[data-delay="100"] { transition-delay: 0.1s; }
+.scroll-animated[data-delay="200"] { transition-delay: 0.2s; }
+.scroll-animated[data-delay="300"] { transition-delay: 0.3s; }
+.scroll-animated[data-delay="400"] { transition-delay: 0.4s; }
+.scroll-animated[data-delay="500"] { transition-delay: 0.5s; }
+.scroll-animated[data-delay="6

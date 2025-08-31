@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthonys - Homepage (DE)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://codedgar.github.io/Puppertino/css/puppertino.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&amp;family=SF+Pro+Text:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">Anthonys Page</a> <ul class="nav-links">
+                <li><a href="#home">Instagram</a></li>
+                <li><a href="#profiles">Snapchat</a></li> <li><a href="#apple-music-section">Apple Music</a></li>
+                <li><a href="#apps">Tiktok</a></li>
+                <li><a href="#support">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content scroll-animated">
+            <h1>Anthonys</h1> <p>Homepage. Der Löwe. Ein echter Berliner.</p> </div>
+    </section>
+
+    <section class="vision-gallery-section" id="profiles">
+        <h2 class="section-title scroll-animated fade-in-up" data-delay="0">Unsere Profile</h2> <div class="w-full max-w-screen-2xl mx-auto pt-16 pb-16 px-4 sm:px-8 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
+                <div class="vision-card w-full h-[500px] scroll-animated scale-up" data-delay="100" onclick="openCardModal('assets/Anthony1.jpg', 'Anthony', '29. April, 14:16')">
+                    <img alt="[Bild von Anthony]" class="w-full h-full object-cover" src="assets/Anthony1.jpg"/>
+                    <div class="absolute top-0 left-0 w-full p-5 flex justify-between items-center">
+                        <div class="flex items-center space-x-2 glass-ui">
+                            <span class="material-icons bg-white/10 rounded-full p-1 text-lg">chevron_left</span>
+                            <span class="font-semibold text-sm pr-2">Anthony</span>
+                        </div>
+                        <button class="glass-ui-icon rounded-full" onclick="showCustomAlert('Menü für Anthony geklickt!')">
+                            <span class="material-icons text-lg">more_horiz</span>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent">
+                        <h3 class="font-bold text-2xl">Anthony</h3>
+                        <p class="text-base opacity-80">29. April, 14:16</p>
+                    </div>
+                </div>
+
+                <div class="vision-card w-full h-[500px] scroll-animated scale-up" data-delay="200" onclick="openCardModal('assets/anthony3.jpg', 'Anthony', '15. Mai, 11:34')">
+                    <img alt="[Bild von Anthony im Freien]" class="w-full h-full object-cover" src="assets/anthony3.jpg"/>
+                    <div class="absolute top-0 left-0 w-full p-5 flex justify-between items-center">
+                        <div class="flex items-center space-x-2 glass-ui">
+                            <span class="material-icons bg-white/10 rounded-full p-1 text-lg">chevron_left</span>
+                            <span class="font-semibold text-sm pr-2">Anthony</span>
+                        </div>
+                        <button class="glass-ui-icon rounded-full" onclick="showCustomAlert('Menü für Anthony geklickt!')">
+                            <span class="material-icons text-lg">more_horiz</span>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent">
+                        <h3 class="font-bold text-2xl">Anthony</h3>
+                        <p class="text-base opacity-80">15. Mai, 11:34</p>
+                    </div>
+                </div>
+
+                <div class="vision-card w-full h-[500px] scroll-animated scale-up" data-delay="300" onclick="openCardModal('assets/Anthony2.jpg', 'Anthony', '02. Juni, 18:05')">
+                    <img alt="[Bild von Anthony im Freien]" class="w-full h-full object-cover" src="assets/Anthony2.jpg"/>
+                    <div class="absolute top-0 left-0 w-full p-5 flex justify-between items-center">
+                        <div class="flex items-center space-x-2 glass-ui">
+                            <span class="material-icons bg-white/10 rounded-full p-1 text-lg">chevron_left</span>
+                            <span class="font-semibold text-sm pr-2">Anthony</span>
+                        </div>
+                        <button class="glass-ui-icon rounded-full" onclick="showCustomAlert('Menü für Chloe geklickt!')">
+                            <span class="material-icons text-lg">more_horiz</span>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent">
+                        <h3 class="font-bold text-2xl">Anthony</h3>
+                        <p class="text-base opacity: 0.8;">02. Juni, 18:05</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="cardModalOverlay" class="card-modal-overlay" onclick="closeCardModal()">
+        <div class="card-modal-content" onclick="event.stopPropagation()">
+            <span class="material-icons card-modal-close" onclick="closeCardModal()">close</span>
+            <img id="cardModalImage" src="" alt="[Popup Bild]"/>
+            <h3 id="cardModalTitle"></h3>
+            <p id="cardModalDate"></p>
+        </div>
+    </div>
+
+    <section class="apple-music-section" id="apple-music-section">
+        <h2 class="section-title scroll-animated fade-in-up" data-delay="0">Meine Apple Music Playlist</h2>
+        <div class="container">
+            <div class="flex items-center justify-center p-4"> <main class="w-full max-w-4xl mx-auto">
+                    <div class="apple-music-card scroll-animated fade-in-up" data-delay="100">
+                        <div class="apple-music-card-left">
+                            <div class="apple-music-image">
+                                <img alt="[Bild eines Vollmonds]" class="rounded-xl w-full h-full object-cover" src="assets/unnamed (1).jpg"/>
+                            </div>
+                            <div class="mt-6 space-y-1">
+                                <h1 class="apple-music-title">Nasheeds</h1>
+                                <p class="apple-music-subtitle">von Anthony</p>
+                            </div>
+                            <div class="mt-4">
+                                <a href="https://music.apple.com/de/playlist/nasheed/pl.u-KVXBk1BC12PdKza" target="_blank" class="apple-music-button" id="appleMusicButton">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path>
+                                    </svg>
+                                    <span>Listen on Apple Music</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="apple-music-card-right">
+                            <div class="space-y-6">
+                                <div>
+                                    <h2 class="apple-music-section-title">Nasheeds. <span class="playlist-gradient-text">Meine Playlist.</span></h2>
+                                    <p class="apple-music-text-secondary mt-2 leading-relaxed">Nasheeds. Eine Playlist, welche nicht nur entspannt, sondern einen an das Wesentliche erinnert.</p>
+                                </div>
+                                <div class="apple-music-border-top"></div>
+                                <div>
+                                    <h3 class="apple-music-section-title">In dieser Playlist:</h3>
+                                    <ul class="mt-3 space-y-3">
+                                        <li class="apple-music-list-item">
+                                            <img alt="Artist photo" class="w-12 h-12 rounded-full object-cover" src="assets/IMG_8990.JPEG"/>
+                                            <div>
+                                                <p class="font-semibold text-[var(--apple-text-primary)]">Artist 3 Name</p>
+                                                <p class="text-sm apple-music-text-secondary">Location 3</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="apple-music-border-top"></div>
+                                <div>
+                                    <h3 class="apple-music-section-title">Playlist Stats</h3>
+                                    <div class="apple-music-stats-grid">
+                                        <div class="apple-music-stat-card">
+                                            <p class="apple-music-text-secondary">Songs</p>
+                                            <p class="text-2xl font-semibold text-[var(--apple-text-primary)]">50</p>
+                                        </div>
+                                        <div class="apple-music-stat-card">
+                                            <p class="apple-music-text-secondary">Duration</p>
+                                            <p class="text-2xl font-semibold text-[var(--apple-text-primary)]">2h 45m</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-text scroll-animated slide-in-left" data-delay="100">
+                    <h3>Individualisiere deine Chats</h3>
+                    <p>Füge Unterhaltungen Hintergründe hinzu. Wähle aus tollen, integrierten Optionen oder entscheide dich für deine eigenen Fotos und gib deinen Unterhaltungen in Nachrichten einen persönlichen Touch.</p>
+                </div>
+                <div class="feature-visual scroll-animated slide-in-right" data-delay="200">
+                    <div class="loading-spinner"></div> </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-features-section">
+        <div class="container">
+            <h2 class="section-title scroll-animated fade-in-up" data-delay="0">Neue Funktionen im Detail</h2>
+            
+            <div class="feature-row">
+                <div class="feature-content-block scroll-animated fade-in-up" data-delay="100">
+                    <div class="feature-image-wrapper">
+                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Interaktive+Karten" alt="" class="pt-image-rounded-2x">
+                    </div>
+                    <div class="feature-text-block">
+                        <h3>Interaktive Karten</h3>
+                        <p>Entdecken Sie unsere neuen, dynamischen Karten, die auf Berührung reagieren und Ihnen ein immersives Erlebnis bieten. Jede Karte ist so gestaltet, dass sie Informationen auf intuitive und visuell ansprechende Weise präsentiert.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-content-block scroll-animated fade-in-up" data-delay="200">
+                    <div class="feature-image-wrapper">
+                        <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Erweiterte+Suche" alt="" class="pt-image-rounded-2x">
+                    </div>
+                    <div class="feature-text-block">
+                        <h3>Erweiterte Suchfunktionen</h3>
+                        <p>Finden Sie genau das, was Sie suchen, mit unserer verbesserten Suchtechnologie. Filteroptionen und intelligente Vorschläge helfen Ihnen, Inhalte schneller und effizienter zu entdecken.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-content-block scroll-animated fade-in-up" data-delay="300">
+                    <div class="feature-image-wrapper">
+                        <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Personalisierte+Feeds" alt="" class="pt-image-rounded-2x">
+                    </div>
+                    <div class="feature-text-block">
+                        <h3>Personalisierte Feeds</h3>
+                        <p>Erleben Sie eine maßgeschneiderte Ansicht Ihrer Inhalte. Unser System lernt Ihre Präferenzen und liefert Ihnen relevante Updates und Empfehlungen, die speziell auf Sie zugeschnitten sind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="messages-section">
+        <div class="container">
+            <h2 class="section-title scroll-animated fade-in-up" data-delay="0">Starte Umfragen in Nachrichten</h2>
+            <div class="messages-demo scroll-animated scale-up" data-delay="100">
+                <div class="message-bubble">Hey! Wo sollen wir uns heute treffen? 🍕</div>
+                <div class="message-bubble received">Erstelle eine Umfrage!</div>
+                <div class="message-bubble">Pizza Place oder Burger Joint?</div>
+                <div class="message-bubble received">Pizza Place! 🍕</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="scroll-animated fade-in-up" style="font-size: 3rem; margin-bottom: 20px;" data-delay="0">Erlebe Anthonys</h2>
+            <p class="scroll-animated fade-in-up" style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;" data-delay="100">
+                Entdecke alle neuen Features und Verbesserungen
+            </p>
+            <a href="#" class="cta-button pt-button pt-button-primary scroll-animated scale-up" data-delay="200">Mehr erfahren</a>
+            <a href="#" class="cta-button pt-button pt-button-secondary scroll-animated scale-up" data-delay="300">Update laden</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section scroll-animated fade-in-up" data-delay="100">
+                <h4>Shop and Learn</h4>
+                <ul>
+                    <li><a href="#">Mac</a></li>
+                    <li><a href="#">iPad</a></li>
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Watch</a></li>
+                    <li><a href="#">AirPods</a></li>
+                    <li><a href="#">TV & Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-section scroll-animated fade-in-up" data-delay="200">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Apple Music</a></li>
+                    <li><a href="#">Apple TV+</a></li>
+                    <li><a href="#">Apple Fitness+</a></li>
+                    <li><a href="#">Apple News+</li>
+                    <li><a href="#">Apple Arcade</a></li>
+                    <li><a href="#">iCloud</a></li>
+                </ul>
+            </div>
+            <div class="footer-section scroll-animated fade-in-up" data-delay="300">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#">Manage Your Apple ID</a></li>
+                    <li><a href="#">Apple Store Account</a></li>
+                    <li><a href="#">iCloud.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-section scroll-animated fade-in-up" data-delay="400">
+                <h4>Apple Store</h4>
+                <ul>
+                    <li><a href="#">Find a Store</a></li>
+                    <li><a href="#">Genius Bar</a></li>
+                    <li><a href="#">Today at Apple</a></li>
+                    <li><a href="#">Apple Camp</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="customAlertOverlay" class="custom-modal-overlay">
+        <div class="custom-modal-content">
+            <h3 id="customAlertTitle">Menüoptionen</h3>
+            <p id="customAlertMessage">Dies ist ein Beispiel für eine benutzerdefinierte Nachricht.</p>
+            <button onclick="hideCustomAlert()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
